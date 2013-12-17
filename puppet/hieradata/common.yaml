@@ -50,6 +50,7 @@ server:
         - postfix
         - vim
         - imagemagick
+        - libpcre3-dev
     dot_files:
         -
             bash_aliases: null
