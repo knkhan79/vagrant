@@ -83,6 +83,7 @@ php:
             - imagick
             - gd
             - gmp
+            - apc 
         pear: {  }
         pecl:
             - pecl_http
