@@ -1,5 +1,5 @@
 
- 					     Vagrant typo3 Machine
+ 			     Vagrant typo3 Machine by (knkhan@gmail.com)
                                           _       _   _                 
   ___ ___   ___ _   _ ___       ___  ___ | |_   _| |_(_) ___  _ __  ___ 
  / __/ _ \ / _ \ | | / __|_____/ __|/ _ \| | | | | __| |/ _ \| '_ \/ __|
