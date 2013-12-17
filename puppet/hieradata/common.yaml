@@ -59,14 +59,14 @@ apache:
     vhosts:
         j3tSem6jElT3:
             servername: ubuntu-dev.coeus-solutions.de
-            docroot: /var/www/typo3
+            docroot: /var/www/
             port: '80'
             setenv:
                 - 'APP_ENV dev'
             override:
                 - All
-    user: www-data
-    group: www-data
+    user: vagrant
+    group: vagrant
     default_vhost: true
     mpm_module: prefork
 php:
