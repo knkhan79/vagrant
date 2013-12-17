@@ -47,6 +47,9 @@ vagrantfile-local:
 server:
     packages:
         - traceroute
+        - postfix
+        - vim
+        - imagemagick
     dot_files:
         -
             bash_aliases: null
@@ -77,6 +80,9 @@ php:
             - cli
             - intl
             - mcrypt
+            - imagick
+            - gd
+            - gmp
         pear: {  }
         pecl:
             - pecl_http
