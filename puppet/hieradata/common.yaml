@@ -83,10 +83,11 @@ php:
             - imagick
             - gd
             - gmp
-            - apc 
+   
         pear: {  }
         pecl:
             - pecl_http
+            - APC
     ini:
         display_errors: On
         error_reporting: '-1'
