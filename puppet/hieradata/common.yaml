@@ -97,6 +97,7 @@ php:
         post_max_size: 10M
         upload_max_filesize: 10M
         date.timezone: Asia/Karachi
+        extension: apc.so
 
 xdebug:
     install: 0
