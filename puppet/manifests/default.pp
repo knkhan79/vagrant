@@ -306,8 +306,9 @@ if count($php_values['modules']['pecl']) > 0 {
   php_pecl_mod { $php_values['modules']['pecl']:; }
 }
 if count($php_values['ini']) > 0 {
-  $php_values['ini'].each { |$key, $value|
-    puphpet::ini { $key:
+  #$php_values['ini'].each { |$key, $value|
+   each( $php_values['ini'] ) |$key, $value| {  
+  puphpet::ini { $key:
       entry       => "CUSTOM/${key}",
       value       => $value,
       php_version => $php_values['version'],
@@ -369,34 +370,34 @@ if $php_values['composer'] == 1 {
 
 ## Begin Xdebug manifest
 
-if $xdebug_values == undef {
-  $xdebug_values = hiera('xdebug', false)
-}
+#if $xdebug_values == undef {
+#  $xdebug_values = hiera('xdebug', false)
+#}
+#
+#if is_hash($apache_values) {
+#  $xdebug_webserver_service = 'httpd'
+#} elsif is_hash($nginx_values) {
+#  $xdebug_webserver_service = 'nginx'
+#} else {
+#  $xdebug_webserver_service = undef
+#}
 
-if is_hash($apache_values) {
-  $xdebug_webserver_service = 'httpd'
-} elsif is_hash($nginx_values) {
-  $xdebug_webserver_service = 'nginx'
-} else {
-  $xdebug_webserver_service = undef
-}
+#if $xdebug_values['install'] != undef and $xdebug_values['install'] == 1 {
+#  class { 'puphpet::xdebug':
+#    webserver => $xdebug_webserver_service
+#  }
 
-if $xdebug_values['install'] != undef and $xdebug_values['install'] == 1 {
-  class { 'puphpet::xdebug':
-    webserver => $xdebug_webserver_service
-  }
-
-  if is_hash($xdebug_values['settings']) and count($xdebug_values['settings']) > 0 {
-    $xdebug_values['settings'].each { |$key, $value|
-      puphpet::ini { $key:
-        entry       => "XDEBUG/${key}",
-        value       => $value,
-        php_version => $php_values['version'],
-        webserver   => $xdebug_webserver_service
-      }
-    }
-  }
-}
+#  if is_hash($xdebug_values['settings']) and count($xdebug_values['settings']) > 0 {
+#    $xdebug_values['settings'].each { |$key, $value|
+#      puphpet::ini { $key:
+#        entry       => "XDEBUG/${key}",
+#        value       => $value,
+#        php_version => $php_values['version'],
+#        webserver   => $xdebug_webserver_service
+ #     }
+ #   }
+ # }
+#}
 
 ## Begin MySQL manifest
 
