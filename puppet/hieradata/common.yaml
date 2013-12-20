@@ -96,7 +96,7 @@ php:
         max_execution_time: '260'
         post_max_size: 10M
         upload_max_filesize: 10M
-        timezone: Asia/Karachi
+        date.timezone: Asia/Karachi
 
 xdebug:
     install: 0
