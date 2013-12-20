@@ -94,9 +94,9 @@ php:
         error_reporting: '-1'
         session.save_path: /var/lib/php/session
         timezone: Asia/Karachi
-        upload_max_filesize '10M'
-        max_execution_time '260'
-        post_max_size '10M'   
+        upload_max_filesize: 10M
+        max_execution_time: 260
+        post_max_size: 10M   
 xdebug:
     install: 0
     settings:
